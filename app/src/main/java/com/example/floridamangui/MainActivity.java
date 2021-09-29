@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Player playerOne = new Player("Aitor1234","1234", "Aitor Arrese-Igor");
+        Player playerOne = new Player("HI","HI", "Aitor Arrese-Igor");
         Player playerTwo = new Player("ThisIsHard","QUIT", "Sad Coding");
         Player playerThree = new Player("YUR","4321", "Please Work");
 
@@ -29,16 +30,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        EditText usernameBox = (EditText) findViewById(R.id.UsernameBox);
+
     }
 
     public void SendMessage(View view)
     {
+        Intent changeScreen1 = new Intent(this, MainActivity2.class);
+        EditText usernameBox = (EditText) findViewById(R.id.UsernameBox);
+        EditText passwordBox = (EditText) findViewById(R.id.PasswordBox);
         for(Player current: Player.allPlayers.values())
         {
-            if(current.getUsername().equals())
+            //if(current.getUsername().equals(usernameBox.getText()) && current.getPassword().equals(passwordBox.getText()))
+            //{
+              //  startActivity(changeScreen1);
+            //}
         }
-        Intent intent = new Intent(this, MainActivity2.class);
-        startActivity(intent);
+        startActivity(changeScreen1);
 
     }
 }
