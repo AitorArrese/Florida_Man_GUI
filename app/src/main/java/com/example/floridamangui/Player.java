@@ -8,7 +8,8 @@ public class Player {
     private String username;
     private String password;
     private String fullName;
-    private int bestScore;
+    private int bestScore = 0;
+    public static Player currentPlayer;
     public static HashMap<Integer, Player> allPlayers = new HashMap<Integer, Player>();
     public Player(String user, String pass, String name)
     {
@@ -21,11 +22,28 @@ public class Player {
         allPlayers.put(primaryID, this);
     }
 
-    public String getUsername() {
+    public String getUsername()
+    {
         return username;
+    }
+    public String getFullName()
+    {
+        return fullName;
     }
     public String getPassword()
     {
         return password;
+    }
+    public int getPrimaryID()
+    {
+        return primaryID;
+    }
+    public int getBestScore()
+    {
+        return bestScore;
+    }
+    public void setBestScore(int score)
+    {
+        bestScore = score;
     }
 }
