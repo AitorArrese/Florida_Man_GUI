@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:text="1"
+        android:text="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/label2" />
 
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
         android:layout_marginTop="32dp"
-        android:text="3"
+        android:text="0"
         app:layout_constraintStart_toEndOf="@+id/label2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,9 +97,11 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="@+id/optionB"
-        app:layout_constraintEnd_toEndOf="@+id/OptionC"
-        app:layout_constraintStart_toStartOf="@+id/OptionC"
-        app:layout_constraintTop_toTopOf="@+id/optionB" />
+        app:layout_constraintEnd_toEndOf="@+id/optionC"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/optionC"
+        app:layout_constraintTop_toTopOf="@+id/optionB"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/optionB"
@@ -116,14 +118,12 @@
         app:layout_constraintTop_toTopOf="@+id/headline" />
 
     <TextView
-        android:id="@+id/OptionC"
+        android:id="@+id/optionC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="68dp"
         android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/headline"
         app:layout_constraintStart_toEndOf="@+id/label"
         app:layout_constraintTop_toBottomOf="@+id/optionA" />
 
@@ -140,12 +140,22 @@
         android:id="@+id/answerBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
+        android:layout_marginStart="112dp"
         android:layout_marginBottom="172dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/checkAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:onClick="checkAnswer"
+        android:text="Check"
+        app:layout_constraintEnd_toEndOf="@+id/answerBox"
+        app:layout_constraintStart_toStartOf="@+id/answerBox"
+        app:layout_constraintTop_toBottomOf="@+id/answerBox" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
