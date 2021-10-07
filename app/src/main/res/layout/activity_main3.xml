@@ -6,4 +6,108 @@
     android:layout_height="match_parent"
     tools:context=".Main3Activity">
 
+    <TextView
+        android:id="@+id/incorrectC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="10"
+        app:layout_constraintStart_toStartOf="@+id/correctC"
+        app:layout_constraintTop_toBottomOf="@+id/correctC" />
+
+    <TextView
+        android:id="@+id/correctC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="44dp"
+        android:text="10"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/summary" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="168dp"
+        android:layout_marginBottom="22dp"
+        android:text="Correct:"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:text="Incorrect:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/incorrectC"
+        app:layout_constraintEnd_toStartOf="@+id/incorrectC" />
+
+    <TextView
+        android:id="@+id/summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Score Summary"
+        app:layout_constraintEnd_toEndOf="@+id/correctC"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:text="Best Score"
+        app:layout_constraintEnd_toEndOf="@+id/summary"
+        app:layout_constraintStart_toStartOf="@+id/summary"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="36dp"
+        android:text="Correct:"
+        app:layout_constraintEnd_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/CorrectB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:text="10"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incorrect:"
+        app:layout_constraintBaseline_toBaselineOf="@+id/IncorrectB"
+        app:layout_constraintEnd_toEndOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/IncorrectB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="24dp"
+        android:text="10"
+        app:layout_constraintStart_toStartOf="@+id/CorrectB"
+        app:layout_constraintTop_toBottomOf="@+id/CorrectB" />
+
+    <TextView
+        android:id="@+id/newBestScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="50dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 </androidx.constraintlayout.widget.ConstraintLayout>

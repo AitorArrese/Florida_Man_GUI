@@ -3,13 +3,16 @@ package com.example.floridamangui;
 import java.util.HashMap;
 
 public class Player {
+    public static Player currentPlayer;
     private static int ID = 0;
     private int primaryID;
     private String username;
     private String password;
     private String fullName;
     private int bestScore = 0;
-    public static Player currentPlayer;
+    private int currentCorrect = 0;
+    private boolean isNewBest;
+
     public static HashMap<Integer, Player> allPlayers = new HashMap<Integer, Player>();
     public Player(String user, String pass, String name)
     {
@@ -38,10 +41,27 @@ public class Player {
     {
         return primaryID;
     }
+    public int getCurrentScore()
+    {
+        return currentCorrect;
+    }
+    public void setCurrentScore(int score)
+    {
+        currentCorrect = score;
+    }
     public int getBestScore()
     {
         return bestScore;
     }
+    public void isNewBest(){
+        isNewBest = true;
+    }
+    public void isntNewBest(){
+        isNewBest = false;
+    }
+
+    public static Player getCurrentPlayer() { return currentPlayer; }
+
     public void setBestScore(int score)
     {
         bestScore = score;

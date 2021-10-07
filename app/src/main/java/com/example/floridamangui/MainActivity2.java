@@ -24,11 +24,23 @@ public class MainActivity2 extends AppCompatActivity {
         playerID.setText(String.valueOf(Player.currentPlayer.getPrimaryID()));
         highScore.setText(String.valueOf(Player.currentPlayer.getBestScore()));
         setUpQuestion();
-        System.out.println("eh");
     }
 
     public void setUpQuestion()
     {
+        if(FloridaManStory.getCurrentQuestion() > 9)
+        {
+            Player.currentPlayer.setCurrentScore(currentCorrect);
+            Player.currentPlayer.isntNewBest();
+            if(Player.currentPlayer.getBestScore() < currentCorrect)
+            {
+                Player.currentPlayer.isNewBest();
+                Player.currentPlayer.setBestScore(currentCorrect);
+            }
+            Intent changeScreen2 = new Intent(this, Main3Activity.class);
+            startActivity(changeScreen2);
+        }
+
         FloridaManStory currentQuestion;
         currentQuestion = FloridaManStory.allQuestions.get(FloridaManStory.getCurrentQuestion());
         TextView headline = (TextView) findViewById(R.id.headline);
