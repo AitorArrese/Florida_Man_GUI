@@ -31,10 +31,20 @@ public class MainActivity extends AppCompatActivity {
         new FloridaManStory("Florida influencer filmed herself licking plane ______ for 'clout' on TikTok as part of 'Coronavirus Challenge'","Toilet Seat","Trash Can","Railing","Suitcase");
         new FloridaManStory("Florida man arrested after stealing 66 _______ from hotel","rolls of toilet paper","light bulbs","shampoo bottles","towels");
         new FloridaManStory("Burglary suspect, 39, dressed only in his underwear strikes Florida officer with _______ while screaming 'I condemn you'","Bible","Rolling Pin","License Plate","Rock");
+        new FloridaManStory("Florida Man flashes buttocks at _______ after impersonating a police officer to get free food","IHOP","McDonalds","Child","Starbucks");
+        new FloridaManStory("Florida man claims wife was kidnapped by ________", "Holograms","Neighbors","Giants","Santa Clause");
+        new FloridaManStory("Florida Man steals ______ pairs of underwear from Victoria's Secret","850","1,000","60","175");
+        new FloridaManStory("Florida Man attacks nephew over __________","Undercooked Noodles","Christmas Present","Star Wars","Video Game");
+        new FloridaManStory("Florida Men attack ice cream man who wouldn't take $20 bill for _______","Pickled Sausage","Chocolate Puddling","Strawberry Blast","Milk Shake");
+        new FloridaManStory("Florida Man pokes _______ in the eye after she served him waffles instead of pancakes.","Girlfriend","Waiter","Chef","Grandma");
+        new FloridaManStory("Florida Man tries to avoid court appearance by claiming he has ______","Ebola","Covid 19","Herpes","Aids");
+        new FloridaManStory("Florida Man accidentally butt-dials 911 while _______ with his mom","Cooking Meth","Fighting ","Having Sex","Stealing");
+        new FloridaManStory("Florida Man attacks _____ with hatchet after it refuses to take his check","ATM","Macy's","Waiter","Prostitute");
+        new FloridaManStory("Florida Man rescued from ______","Vending Machine","Shark","Alligator","Refrigerator");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText usernameBox = (EditText) findViewById(R.id.UsernameBox);
+
 
     }
 

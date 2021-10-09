@@ -11,7 +11,7 @@ public class Player {
     private String fullName;
     private int bestScore = 0;
     private int currentCorrect = 0;
-    private boolean isNewBest;
+    public boolean isNewBest;
 
     public static HashMap<Integer, Player> allPlayers = new HashMap<Integer, Player>();
     public Player(String user, String pass, String name)

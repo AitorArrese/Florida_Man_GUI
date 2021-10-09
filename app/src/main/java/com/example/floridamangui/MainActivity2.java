@@ -28,7 +28,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void setUpQuestion()
     {
-        if(FloridaManStory.getCurrentQuestion() > 9)
+        if(FloridaManStory.getCurrentQuestion() > 20)
         {
             Player.currentPlayer.setCurrentScore(currentCorrect);
             Player.currentPlayer.isntNewBest();
@@ -39,23 +39,26 @@ public class MainActivity2 extends AppCompatActivity {
             }
             Intent changeScreen2 = new Intent(this, Main3Activity.class);
             startActivity(changeScreen2);
+
         }
+        else
+        {
+            FloridaManStory currentQuestion;
+            currentQuestion = FloridaManStory.allQuestions.get(FloridaManStory.getCurrentQuestion());
+            TextView headline = (TextView) findViewById(R.id.headline);
+            TextView option0 = (TextView) findViewById(R.id.optionA);
+            TextView option1 = (TextView) findViewById(R.id.optionB);
+            TextView option2 = (TextView) findViewById(R.id.optionC);
+            TextView option3 = (TextView) findViewById(R.id.optionD);
+            EditText answerBox = (EditText) findViewById(R.id.answerBox);
 
-        FloridaManStory currentQuestion;
-        currentQuestion = FloridaManStory.allQuestions.get(FloridaManStory.getCurrentQuestion());
-        TextView headline = (TextView) findViewById(R.id.headline);
-        TextView option0 = (TextView) findViewById(R.id.optionA);
-        TextView option1 = (TextView) findViewById(R.id.optionB);
-        TextView option2 = (TextView) findViewById(R.id.optionC);
-        TextView option3 = (TextView) findViewById(R.id.optionD);
-        EditText answerBox = (EditText) findViewById(R.id.answerBox);
-
-        headline.setText(currentQuestion.getHeadline());
-        option0.setText(currentQuestion.getOption0());
-        option1.setText(currentQuestion.getOption1());
-        option2.setText(currentQuestion.getOption2());
-        option3.setText(currentQuestion.getOption3());
-        answerBox.setText("");
+            headline.setText(currentQuestion.getHeadline());
+            option0.setText(currentQuestion.getOption0());
+            option1.setText(currentQuestion.getOption1());
+            option2.setText(currentQuestion.getOption2());
+            option3.setText(currentQuestion.getOption3());
+            answerBox.setText("");
+        }
     }
 
     public void checkAnswer(View view)

@@ -28,7 +28,6 @@
         android:ems="10"
         android:hint="@string/edit_Username"
         android:inputType="textPersonName"
-        android:text="Aitor1234"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,7 +39,6 @@
         android:ems="10"
         android:hint="@string/edit_Password"
         android:inputType="textPersonName"
-        android:text="1234"
         app:layout_constraintStart_toStartOf="@+id/UsernameBox"
         app:layout_constraintTop_toBottomOf="@+id/UsernameBox" />
 

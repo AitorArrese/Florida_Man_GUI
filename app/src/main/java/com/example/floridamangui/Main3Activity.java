@@ -21,6 +21,10 @@ public class Main3Activity extends AppCompatActivity {
         incorrectC.setText(String.valueOf(20- Player.currentPlayer.getCurrentScore()));
         correctB.setText(String.valueOf(Player.currentPlayer.getBestScore()));
         incorrectB.setText(String.valueOf(20- Player.currentPlayer.getBestScore()));
+        if(Player.currentPlayer.isNewBest)
+        {
+            newBest.setText("You have a new best score!");
+        }
 
     }
 }
