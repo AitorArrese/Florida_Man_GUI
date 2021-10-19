@@ -1,8 +1,11 @@
 package com.example.floridamangui;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.HashMap;
 
-public class Player {
+public class Player implements Parcelable {
     public static Player currentPlayer;
     private static int ID = 0;
     private int primaryID;
@@ -66,4 +69,31 @@ public class Player {
     {
         bestScore = score;
     }
+
+    public Player(Parcel in){
+        int[] data = new int[1];
+
+        in.readIntArray(data);
+        // the order needs to be the same as in writeToParcel() method
+        this.bestScore = data[0];
+    }
+
+    @Override
+    public int describeContents(){
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeIntArray(new int[] {this.bestScore});
+    }
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public Player createFromParcel(Parcel in) {
+            return new Player(in);
+        }
+
+        public Player[] newArray(int size) {
+            return new Player[size];
+        }
+    };
 }
