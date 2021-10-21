@@ -1,19 +1,25 @@
 package com.example.floridamangui;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Player implements Parcelable {
+public class Player implements Serializable {
     public static Player currentPlayer;
-    private static int ID = 0;
-    private int primaryID;
+    private static Integer ID = 0;
+    private Integer primaryID;
     private String username;
     private String password;
     private String fullName;
-    private int bestScore = 0;
-    private int currentCorrect = 0;
+    private Integer bestScore = 0;
+    private Integer currentCorrect = 0;
     public boolean isNewBest;
 
     public static HashMap<Integer, Player> allPlayers = new HashMap<Integer, Player>();
@@ -70,30 +76,13 @@ public class Player implements Parcelable {
         bestScore = score;
     }
 
-    public Player(Parcel in){
-        int[] data = new int[1];
-
-        in.readIntArray(data);
-        // the order needs to be the same as in writeToParcel() method
-        this.bestScore = data[0];
+    public static void savePlayer(Context context, Player player) throws IOException
+    {
+        FileOutputStream fos = context.openFileOutput("player.dat", Context.MODE_PRIVATE);
+        ObjectOutputStream os = new ObjectOutputStream(fos);
+        os.writeObject(player);
+        os.close();
+        fos.close();
+        Log.d("Saving", "Saved");
     }
-
-    @Override
-    public int describeContents(){
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeIntArray(new int[] {this.bestScore});
-    }
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-        public Player createFromParcel(Parcel in) {
-            return new Player(in);
-        }
-
-        public Player[] newArray(int size) {
-            return new Player[size];
-        }
-    };
 }

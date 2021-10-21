@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,13 @@ public class MainActivity extends AppCompatActivity {
         Player playerOne = new Player("Aitor1234","1234", "Aitor Arrese-Igor");
         Player playerTwo = new Player("ThisIsHard","QUIT", "Sad Coding");
         Player playerThree = new Player("YUR","4321", "Please Work");
+        try{
+            Player.savePlayer(getApplicationContext(), playerOne);
+            Player.savePlayer(getApplicationContext(), playerTwo);
+            Player.savePlayer(getApplicationContext(), playerThree);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         new FloridaManStory("Florida man charged with assault with a deadly weapon after throwing ______ through Wendy's window","Alligator","Crocodile","Gun","Knife");
         new FloridaManStory("Florida man caught liking ______","Doorbells","Strangers","Cars","Iphones");
